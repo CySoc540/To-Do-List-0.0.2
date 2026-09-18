@@ -77,6 +77,12 @@ if __name__ == "__main__":
     else:
         print("Best let that one be...")
 
+try:
+    with sqlite3.connect("to_do_list.db") as conn:
+        print ("Database updated successfully.")
+except sqlite3.OperationalError:
+    print("Failed to connect to database...")
+    
 ### Front End
 
 # To Do List App with tasks listed by priority that shows
