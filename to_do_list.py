@@ -14,8 +14,7 @@ def init_db():
                 finished INTEGER NOT NULL DEFAULT 0,
                 priority INTEGER NOT NULL DEFAULT 3
                     CHECK (priority BETWEEN 1 AND 3),
-                comment TEXT NOT NULL)"""
-        )
+                comment TEXT NOT NULL)""")
 
 
 def add_task(task, priority, comment):
