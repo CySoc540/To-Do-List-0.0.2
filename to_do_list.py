@@ -9,14 +9,13 @@ DB = "to_do_list.db"
 def init_db():
     with sqlite3.connect(DB) as conn:
         conn.execute("""
-                     CREATE TABLE IF NOT EXISTS to_do_list
-                     (
-                         task TEXT NOT NULL,
-                         finished INTEGER NOT NULL DEFAULT 0,
-                         priority INTEGER NOT NULL DEFAULT 3
-                            CHECK (priority BETWEEN 1 AND 3),
-                         comment TEXT NOT NULL)"""
-                     )
+            CREATE TABLE IF NOT EXISTS to_do_list(
+                task TEXT NOT NULL,
+                finished INTEGER NOT NULL DEFAULT 0,
+                priority INTEGER NOT NULL DEFAULT 3
+                    CHECK (priority BETWEEN 1 AND 3),
+                comment TEXT NOT NULL)"""
+        )
 
 
 def add_task(task, priority, comment):
